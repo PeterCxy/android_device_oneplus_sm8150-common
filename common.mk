@@ -138,7 +138,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl:64 \
     android.hardware.boot@1.0-service \
-    bootctrl.msmnile \
+    android.hardware.boot@1.0-impl.recovery \
+    bootctrl.msmnile.recovery \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
@@ -146,7 +147,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msmnile \
     libcutils \
-    libgptutils.oneplus_sm8150.recovery \
+    libgptutils.oneplus_msmnile.recovery \
     libz
 
 # Bluetooth

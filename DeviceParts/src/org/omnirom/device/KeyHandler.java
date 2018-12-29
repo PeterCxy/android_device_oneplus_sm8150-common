@@ -20,13 +20,16 @@ package org.omnirom.device;
 import static android.provider.Settings.Global.ZEN_MODE_OFF;
 import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
+import org.omnirom.device.R;
 import android.app.ActivityManagerNative;
+import android.app.ActivityThread;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -38,6 +41,7 @@ import android.media.session.MediaSessionLegacyHelper;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -59,6 +63,11 @@ import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
 
+import android.view.Gravity;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.aosip.aosipUtils;
@@ -105,6 +114,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int FP_GESTURE_SWIPE_RIGHT = 106;
     private static final int FP_GESTURE_LONG_PRESS = 305;
     private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+
+    public static final String PACKAGE_SYSTEMUI = "com.android.systemui";
 
     private static final int[] sSupportedGestures5t = new int[]{
         GESTURE_II_SCANCODE,
@@ -188,6 +199,9 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean isFpgesture;
     private boolean mTorchState = false;
     private boolean mUseSliderTorch = false;
+    private Toast toast;
+    private final Context mSysUiContext;
+    private final Context mResContext;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -307,6 +321,8 @@ public class KeyHandler implements DeviceKeyHandler {
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
+        mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
+        mResContext = getPackageContext(mContext, "org.omnirom.device");
     }
 
     private class EventHandler extends Handler {
@@ -327,15 +343,15 @@ public class KeyHandler implements DeviceKeyHandler {
             switch(event.getScanCode()) {
                 case KEY_SLIDER_TOP:
                     if (DEBUG) Log.i(TAG, "KEY_SLIDER_TOP");
-                    doHandleSliderAction(0);
+                    doHandleSliderAction(0, 170);
                     return true;
                 case KEY_SLIDER_CENTER:
                     if (DEBUG) Log.i(TAG, "KEY_SLIDER_CENTER");
-                    doHandleSliderAction(1);
+                    doHandleSliderAction(1, 260);
                     return true;
                 case KEY_SLIDER_BOTTOM:
                     if (DEBUG) Log.i(TAG, "KEY_SLIDER_BOTTOM");
-                    doHandleSliderAction(2);
+                    doHandleSliderAction(2, 350);
                     return true;
             }
         }
@@ -503,29 +519,34 @@ public class KeyHandler implements DeviceKeyHandler {
         return 0;
     }
 
-    private void doHandleSliderAction(int position) {
+    private void doHandleSliderAction(int position, int yOffset) {
         int action = getSliderAction(position);
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             mTorchState = false;
+            showToast(R.string.toast_ringer, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
             mTorchState = false;
+            showToast(R.string.toast_vibrate, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
             mTorchState = false;
+            showToast(R.string.toast_silent, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 3) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             mTorchState = false;
+            showToast(R.string.toast_dnd, Toast.LENGTH_SHORT, yOffset);
         } else if (action == 4) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             mUseSliderTorch = true;
             mTorchState = true;
+            showToast(R.string.toast_flash, Toast.LENGTH_SHORT, yOffset);
         }
 
         if (((!mProxyIsNear && mUseProxiCheck) || !mUseProxiCheck) && mUseSliderTorch && action < 4) {
@@ -711,21 +732,33 @@ public class KeyHandler implements DeviceKeyHandler {
         return "com.oneplus.sensor.pocket";
     }
 
-    /*private void vibe(){
-        /*boolean doVibrate = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.OMNI_DEVICE_GESTURE_FEEDBACK_ENABLED, 0,
-                UserHandle.USER_CURRENT) == 1;
-        int owningUid;
-        String owningPackage;
-        
-        owningUid = android.os.Process.myUid();
-        owningPackage = mContext.getOpPackageName();
-        VibrationEffect effect = VibrationEffect.get(VibrationEffect.EFFECT_HEAVY_CLICK);
-        //mVibrator.vibrate(owningUid, owningPackage, effect, VIBRATION_ATTRIBUTES);
-        //OmniVibe.performHapticFeedback(owningUid, owningPackage, effect, VIBRATION_ATTRIBUTES);
-        
-        //OmniVibe mOmniVibe = new OmniVibe();
-        OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
-    }*/
-    
+    void showToast(int messageId, int duration, int yOffset) {
+        final String message = mResContext.getResources().getString(messageId);
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+        @Override
+        public void run() {
+            if (toast != null) toast.cancel();
+            toast = Toast.makeText(mSysUiContext, message, duration);
+            toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, yOffset);
+            toast.show();
+            }
+        });
+    }
+
+    public static Context getPackageContext(Context context, String packageName) {
+        Context pkgContext = null;
+        if (context.getPackageName().equals(packageName)) {
+            pkgContext = context;
+        } else {
+            try {
+                pkgContext = context.createPackageContext(packageName,
+                        Context.CONTEXT_IGNORE_SECURITY
+                                | Context.CONTEXT_INCLUDE_CODE);
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return pkgContext;
+    }
 }

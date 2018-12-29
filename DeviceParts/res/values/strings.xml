@@ -103,4 +103,10 @@
     <string name="tile_panel_mode">Panel modes</string>
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="wake_entry">Wakeup</string>
+
+    <string name="toast_ringer">Ringer</string>
+    <string name="toast_vibrate">Vibrate only</string>
+    <string name="toast_dnd">Do Not Disturb</string>
+    <string name="toast_silent">Silent</string>
+    <string name="toast_flash">Flashlight</string>
 </resources>

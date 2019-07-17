@@ -241,6 +241,12 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 # GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.1-impl-qti \
+    libcurl \
+    libgnss \
+    libgnsspps
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \

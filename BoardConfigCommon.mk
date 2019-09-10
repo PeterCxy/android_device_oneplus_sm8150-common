@@ -61,6 +61,9 @@ TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_VNDK_VERSION := current
+# TODO: Remove this after updating blobs to OOS 10 beta
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"

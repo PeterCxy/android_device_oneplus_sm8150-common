@@ -152,7 +152,6 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msmnile \
     libcutils \
     libgptutils.oneplus_msmnile.recovery \
     libz

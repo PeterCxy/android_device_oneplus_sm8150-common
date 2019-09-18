@@ -167,8 +167,6 @@ TARGET_RIL_VARIANT := caf
 VENDOR_SECURITY_PATCH := 2018-08-05
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor

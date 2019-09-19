@@ -147,6 +147,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     android.hardware.boot@1.0-impl.recovery:64 \
     bootctrl.msmnile.recovery \
+    bootctrl.msmnile
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl

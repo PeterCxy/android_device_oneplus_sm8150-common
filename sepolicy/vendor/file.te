@@ -28,3 +28,4 @@ type sysfs_vl53l1, sysfs_type, fs_type;
 
 # vendor
 type keylayout_file, file_type, vendor_file_type;
+type vendor_firmware_file, file_type;

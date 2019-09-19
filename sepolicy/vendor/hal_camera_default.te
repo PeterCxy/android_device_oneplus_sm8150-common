@@ -12,4 +12,4 @@ allow hal_camera_default persist_camera_file:file create_file_perms;
 allow hal_camera_default vl53l1_device:chr_file rw_file_perms;
 
 # Properties
-set_prop(hal_camera_default, vendor_camera_prop)
+#set_prop(hal_camera_default, vendor_camera_prop)

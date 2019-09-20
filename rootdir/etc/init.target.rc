@@ -87,7 +87,6 @@ on late-fs
     wait_for_prop hwservicemanager.ready true
     exec_start wait_for_keymaster
     mount_all /vendor/etc/fstab.qcom --late
-    mount_reserve ext4 loop@/data/reserve/reserve.img /system/reserve ro context=u:object_r:system_file:s0
 
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
@@ -103,18 +102,6 @@ on early-boot
     start vendor.sensors
 
 on boot
-    overlay_oneplus overlay overlay /product/app lowerdir=/oneplus/app:/product/app,context=u:object_r:system_file:s0
-    overlay_oneplus overlay overlay /product/priv-app lowerdir=/oneplus/priv-app:/product/priv-app,context=u:object_r:system_file:s0
-    overlay_oneplus overlay overlay /product/etc lowerdir=/oneplus/etc:/product/etc,context=u:object_r:system_file:s0
-    overlay_oneplus overlay overlay /product/framework lowerdir=/oneplus/framework:/product/framework,context=u:object_r:system_file:s0
-    overlay_oneplus overlay overlay /product/media lowerdir=/oneplus/media:/product/media,context=u:object_r:system_file:s0
-    overlay_oneplus overlay overlay /product/lib64 lowerdir=/oneplus/lib64:/product/lib64,context=u:object_r:system_lib_file:s0
-    overlay_oneplus overlay overlay /product/lib lowerdir=/oneplus/lib:/product/lib,context=u:object_r:system_lib_file:s0
-    overlay_oneplus overlay overlay /vendor/overlay lowerdir=/oneplus/overlay:/vendor/overlay,context=u:object_r:vendor_overlay_file:s0
-    overlay_oneplus overlay overlay /system/reserve lowerdir=/oneplus/reserve:/system/reserve,context=u:object_r:system_file:s0
-    mount_india ext4 loop@/data/india/india.img /system/india ro context=u:object_r:system_file:s0
-    overlay_india overlay overlay /product/app lowerdir=/system/india/app:/product/app,context=u:object_r:system_file:s0
-    overlay_india overlay overlay /product/priv-app lowerdir=/system/india/priv-app:/product/priv-app,context=u:object_r:system_file:s0
     write /sys/devices/platform/soc/c80000.i2c/i2c-5/5-0048/tp_fw_update 0
     write /sys/devices/platform/soc/c80000.i2c/i2c-5/5-0049/tp_fw_update 0
 #18857

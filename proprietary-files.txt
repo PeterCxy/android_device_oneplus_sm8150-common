@@ -837,15 +837,14 @@ vendor/lib64/vendor.qti.hardware.mlshal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.mlshal@1.0.so
 
 # Media
-lib/extractors/libmmparserextractor.so
 lib/libFileMux.so
 lib/libmmosal.so
 vendor/lib/libmmosal_proprietary.so
 lib/libmmparser_lite.so
 lib/libOmxMux.so
 product/lib/vendor.qti.hardware.vpp@1.1.so
-lib64/extractors/libmmparserextractor.so
 lib64/libmmosal.so
+lib64/libmmparser_lite.so
 vendor/lib64/libmmosal_proprietary.so
 product/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/bin/vppservice
@@ -1035,6 +1034,7 @@ product/etc/permissions/embms.xml
 etc/permissions/privapp-permissions-qti.xml
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
+product/etc/permissions/privapp-permissions-oem-product.xml
 etc/sysconfig/qti_whitelist.xml
 product/framework/embmslibrary.jar
 framework/qcnvitems.jar
@@ -1626,11 +1626,6 @@ vendor/etc/ais/power_data.csv
 vendor/etc/ais/weight_table/weight_file_1.csv
 vendor/etc/ais/weight_table/weight_file_2.csv
 vendor/etc/ais/weight_table/weight_file_3.csv
-vendor/etc/audio/audio_policy_configuration.xml
-vendor/etc/audio_configs.xml
-vendor/etc/audio_configs_stock.xml
-vendor/etc/audio_effects.conf
-vendor/etc/bluetooth_qti_audio_policy_configuration.xml
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/configstore/wigig.xml
 vendor/etc/fstab_nodata.qcom

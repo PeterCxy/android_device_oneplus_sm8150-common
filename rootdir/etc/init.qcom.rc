@@ -40,6 +40,12 @@ import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.qcom.factory.rc
 import /vendor/etc/init/hw/init.qcom.test.rc
 
+service logcatout /system/bin/logcat -f /data/logcat.txt
+    class core
+    user root
+    shutdown critical
+    disabled
+
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -247,6 +253,15 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    start logcatout
+    #setprop persist.adb.nonblocking_ffs 0
+    #setprop ro.adb.nonblocking_ffs 0
+    #setprop sys.usb.config adb
+    mkdir /data/vendor_ce 0770 root root
+    mkdir /data/vendor_ce/0 0770 root root
+    mkdir /data/media/0 0770 media media
+    mkdir /data/misc_ce/0 0770 media media
+    mkdir /data/system_ce/0 0770 media media
     mkdir /data/vendor/misc 01771 system system
 
     # Create directory used for dump collection

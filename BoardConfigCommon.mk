@@ -197,3 +197,6 @@ WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Temp: allow overriding commands for now
+# TODO: Clean proprietary-files.txt up and remove this
+BUILD_BROKEN_DUP_RULES := true

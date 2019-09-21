@@ -84,6 +84,8 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib64/hw/camera.qcom.so|/vendor/lib64/libc++-v28.so
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true

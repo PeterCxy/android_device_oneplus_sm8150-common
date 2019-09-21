@@ -88,6 +88,4 @@ sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x0
 
 add_dependency "libprocessgroup.so" "${COMMON_BLOB_ROOT}/vendor/lib/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/lib64/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/bin/loc_launcher" "${COMMON_BLOB_ROOT}/vendor/lib/hw/audio.primary.msmnile.so" "${COMMON_BLOB_ROOT}/vendor/lib64/hw/audio.primary.msmnile.so"
 
-replace_dependency "libc++.so" "libc++-v28.so" "${COMMON_BLOB_ROOT}/vendor/lib/hw/camera.qcom.so" "${COMMON_BLOB_ROOT}/vendor/lib64/hw/camera.qcom.so"
-
 "${MY_DIR}/setup-makefiles.sh"

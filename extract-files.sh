@@ -23,6 +23,12 @@ function replace_dependency() {
     done
 }
 
+function add_dependency() {
+    for arg in ${@:2}; do
+        patchelf --add-needed $1 $arg
+    done
+}
+
 DEVICE_COMMON=sm8150-common
 VENDOR=oneplus
 
@@ -80,7 +86,7 @@ sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x0
 sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${COMMON_BLOB_ROOT}/lib64/liblocationservice_jni.so"
 sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${COMMON_BLOB_ROOT}/lib64/libxt_native.so"
 
-replace_dependency "libcutils.so" "libprocessgroup.so" "${COMMON_BLOB_ROOT}/vendor/lib/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/lib64/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/bin/loc_launcher" "${COMMON_BLOB_ROOT}/vendor/lib/hw/audio.primary.msmnile.so" "${COMMON_BLOB_ROOT}/vendor/lib64/hw/audio.primary.msmnile.so"
+add_dependency "libprocessgroup.so" "${COMMON_BLOB_ROOT}/vendor/lib/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/lib64/libgps.utils.so" "${COMMON_BLOB_ROOT}/vendor/bin/loc_launcher" "${COMMON_BLOB_ROOT}/vendor/lib/hw/audio.primary.msmnile.so" "${COMMON_BLOB_ROOT}/vendor/lib64/hw/audio.primary.msmnile.so"
 
 replace_dependency "libc++.so" "libc++-v28.so" "${COMMON_BLOB_ROOT}/vendor/lib/hw/camera.qcom.so" "${COMMON_BLOB_ROOT}/vendor/lib64/hw/camera.qcom.so"
 

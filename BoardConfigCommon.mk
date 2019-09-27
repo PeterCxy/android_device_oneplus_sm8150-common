@@ -135,6 +135,9 @@ DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
+# Media
+TARGET_PROVIDES_LIBPLATFORMCONFIG := true
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
@@ -178,14 +181,6 @@ BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 # Sensors
 SOONG_CONFIG_NAMESPACES += ONEPLUS_MSMNILE_SENSORS
 SOONG_CONFIG_ONEPLUS_MSMNILE_SENSORS := ALS_POS_X ALS_POS_Y
-
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib64/hw/audio.primary.msmnile.so|/system/lib64/vndk-sp-29/libprocessgroup.so \
-    /vendor/lib64/libgps.utils.so|/system/lib64/vndk-sp-29/libprocessgroup.so \
-    /vendor/lib64/hw/camera.qcom.so|/vendor/lib64/libc++-v28.so \
-    /vendor/lib/hw/audio.primary.msmnile.so|/system/lib/vndk-sp-29/libprocessgroup.so \
-    /vendor/lib/libgps.utils.so|/system/lib/vndk-sp-29/libprocessgroup.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(VENDOR_PATH)

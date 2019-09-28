@@ -100,11 +100,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AntHalService
 
+# Atrace
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.audio.common@5.0-util \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
@@ -347,6 +353,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1:64 \
     android.hardware.nfc@1.2:64 \
     android.hardware.secure_element@1.0:64 \
+    android.hardware.secure_element@1.1:64 \
     com.android.nfc_extras \
     Tag \
     vendor.nxp.nxpese@1.0:64 \
@@ -385,7 +392,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
     android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0 \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
@@ -468,8 +474,12 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     libwpa_client \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.0.vendor \
+    vendor.qti.hardware.wifi.hostapd@1.1.vendor \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     wifi-mac-generator \
     wpa_supplicant \
     wpa_supplicant.conf

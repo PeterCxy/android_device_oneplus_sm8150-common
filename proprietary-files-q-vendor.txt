@@ -116,11 +116,6 @@ vendor/etc/ais/power_data.csv
 vendor/etc/ais/weight_table/weight_file_1.csv
 vendor/etc/ais/weight_table/weight_file_2.csv
 vendor/etc/ais/weight_table/weight_file_3.csv
-vendor/etc/audio/audio_policy_configuration.xml
-vendor/etc/audio_configs.xml
-vendor/etc/audio_configs_stock.xml
-vendor/etc/audio_effects.conf
-vendor/etc/bluetooth_qti_audio_policy_configuration.xml
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/configstore/wigig.xml
 vendor/etc/fstab_nodata.qcom
@@ -211,11 +206,6 @@ vendor/etc/libnfc-nxp_yangchengtong.conf
 vendor/etc/libnfc-nxp_zhengzhoubus.conf
 vendor/etc/lm/AdaptLaunchFeature.xml
 vendor/etc/lm/GameOptimizationFeature.xml
-vendor/etc/media_codecs_c2.xml
-vendor/etc/media_codecs_google_c2.xml
-vendor/etc/media_codecs_google_c2_audio.xml
-vendor/etc/media_codecs_google_c2_video.xml
-vendor/etc/media_profiles.xml
 vendor/etc/oneplus_fps_plus.conf
 vendor/etc/oneplus_ftm_test_dulspk.wav
 vendor/etc/oneplus_ftm_test_max.wav
@@ -319,11 +309,6 @@ vendor/lib/com.qualcomm.qti.uceservice@2.0.so
 vendor/lib/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib/ese_client.so
 vendor/lib/ftm_fm_lib.so
-vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
-vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
-vendor/lib/hw/android.hardware.audio@2.0-impl.so
-vendor/lib/hw/android.hardware.audio@5.0-impl.so
-vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.boot@1.0-impl.so
 vendor/lib/hw/android.hardware.broadcastradio@1.0-impl.so
 vendor/lib/hw/android.hardware.contexthub@1.0-impl.generic.so
@@ -596,11 +581,6 @@ vendor/lib64/ese_client.so
 vendor/lib64/ese_spi_nxp.so
 vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hal_libnfc.so
-vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
-vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
-vendor/lib64/hw/android.hardware.audio@2.0-impl.so
-vendor/lib64/hw/android.hardware.audio@5.0-impl.so
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.broadcastradio@1.0-impl.so
 vendor/lib64/hw/android.hardware.contexthub@1.0-impl.generic.so
 vendor/lib64/hw/android.hardware.light@2.0-impl.so

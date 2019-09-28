@@ -90,7 +90,14 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libswdap.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libvolumelistener.so
 vendor/lib/vendor.dolby.hardware.dms@1.0.so
+vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
+vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/hw/audio.primary.msmnile.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -109,6 +116,11 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libswdap.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcompostprocbundle.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libvolumelistener.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0.so
 
@@ -897,7 +909,11 @@ vendor/lib/libFileMux_proprietary.so
 vendor/lib/libFlacSwDec.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
+vendor/lib/libmm-omxcore.so
 vendor/lib/libmmosal_proprietary.so
+vendor/lib/libmmparser_lite_proprietary.so
+vendor/lib/libmmrtpdecoder_proprietary.so
+vendor/lib/libmmrtpencoder_proprietary.so
 vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAacEnc.so
@@ -921,6 +937,8 @@ vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libqcbor.so
+vendor/lib/libqcodec2.so
 vendor/lib/libstagefright_soft_ac4dec.so
 vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/libstagefright_soft_qtiflacdec.so
@@ -938,7 +956,9 @@ vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmm-omxcore.so
 vendor/lib64/libmmosal_proprietary.so
+vendor/lib64/libmmparser_lite_proprietary.so
 vendor/lib64/libMpeg4SwEncoder.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAacEnc.so
@@ -959,6 +979,7 @@ vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libqcodec2.so
 vendor/lib64/libstagefright_soft_qtiflacdec.so
 vendor/lib64/libstagefrightdolby.so
 vendor/lib64/libvppclient.so
@@ -1605,5 +1626,18 @@ vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice_proprietary.so
 vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib/libwfdmminterface_proprietary.so
+vendor/lib/libwfdrtsp_proprietary.so
+vendor/lib/libwfdsessionmodule.so
+vendor/lib/libwfdsm_proprietary.so
+vendor/lib/libwfdsourcesession_proprietary.so
+vendor/lib/libwfdsourcesm_proprietary.so
+vendor/lib/libwfduibcinterface_proprietary.so
+vendor/lib/libwfduibcsink_proprietary.so
+vendor/lib/libwfduibcsinkinterface_proprietary.so
+vendor/lib/libwfduibcsrc_proprietary.so
+vendor/lib/libwfduibcsrcinterface_proprietary.so
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libDxHdcp.so
 vendor/lib/libwfdcodecv4l2_proprietary.so

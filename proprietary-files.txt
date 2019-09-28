@@ -158,11 +158,13 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbthost_if.so
 vendor/lib/libbtnv.so
+vendor/lib/libhfp.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbthost_if.so
 vendor/lib64/libbtnv.so
+vendor/lib64/libhfp.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 
 # Bluetooth (aptX)
@@ -237,6 +239,8 @@ vendor/lib/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib/camera/components/libdepthmapwrapper.so
 vendor/lib/hw/camera.qcom.so
 vendor/lib/hw/com.qti.chi.override.so
+vendor/lib/libSTDualCamCaptureWT.so
+vendor/lib/lib_bokehlib.so
 vendor/lib/lib_oneplus_watermark.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_distortion_correction.so
@@ -244,6 +248,7 @@ vendor/lib/libarcsoft_dualcam_bokeh_api.so
 vendor/lib/libarcsoft_dualcam_refocus_left.so
 vendor/lib/libarcsoft_dualcam_refocus_preview.so
 vendor/lib/libarcsoft_dualcam_refocus_right.so
+vendor/lib/libarcsoft_dualcam_refocus_uw.so
 vendor/lib/libarcsoft_hdrplus_hvx_stub.so
 vendor/lib/libarcsoft_super_night_raw.so
 vendor/lib/libcamera_nn_stub.so
@@ -255,11 +260,14 @@ vendor/lib/libcamxswprocessalgo.so
 vendor/lib/libcamxtintlessalgo.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
+vendor/lib/libfastcrc.so
+vendor/lib/libfastrpc_utf_stub.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmorpho_image_refiner.so
 vendor/lib/libmpbase.so
 vendor/lib/libopcamera_native_modules.so
+vendor/lib/libsns_api.so
 vendor/lib/libsns_device_mode_stub.so
 vendor/lib/libsns_fastRPC_util.so
 vendor/lib/libsns_low_lat_stream_stub.so
@@ -352,6 +360,8 @@ vendor/lib64/camera/components/com.oneplus.node.snapshotfusion.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
+vendor/lib64/libSTDualCamCaptureWT.so
+vendor/lib64/lib_bokehlib.so
 vendor/lib64/lib_oneplus_watermark.so
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_distortion_correction.so
@@ -359,11 +369,14 @@ vendor/lib64/libarcsoft_dualcam_bokeh_api.so
 vendor/lib64/libarcsoft_dualcam_refocus_left.so
 vendor/lib64/libarcsoft_dualcam_refocus_preview.so
 vendor/lib64/libarcsoft_dualcam_refocus_right.so
+vendor/lib64/libarcsoft_dualcam_refocus_uw.so
+vendor/lib64/libarcsoft_low_light_hdr.so
 vendor/lib64/libarcsoft_hdr_couple_api.so
 vendor/lib64/libarcsoft_hdr_denoise_api.so
 vendor/lib64/libarcsoft_hdrplus_hvx_stub.so
 vendor/lib64/libarcsoft_high_dynamic_range.so
 vendor/lib64/libarcsoft_high_dynamic_range_couple.so
+vendor/lib64/libarcsoft_piczoom.so
 vendor/lib64/libarcsoft_smart_denoise.so
 vendor/lib64/libarcsoft_super_night_raw.so
 vendor/lib64/libcamera_nn_stub.so
@@ -375,11 +388,13 @@ vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
+vendor/lib64/libfastrpc_utf_stub.so
 vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmorpho_image_refiner.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libopcamera_native_modules.so
+vendor/lib64/libsns_api.so
 vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
@@ -509,6 +524,10 @@ vendor/etc/sdr_config.cfg
 vendor/lib/libdisplayconfig.so
 vendor/lib/libdisplayqos.so
 vendor/lib/libdpps.so
+vendor/lib/libhdcp1prov.so
+vendor/lib/libhdcp2p2prov.so
+vendor/lib/libhdmiedid.so
+vendor/lib/libhdmipassthru.so
 vendor/lib/libsdedrm.so
 vendor/lib/libsdm-colormgr-algo.so
 -vendor/lib/libsdm-disp-vndapis.so
@@ -518,6 +537,10 @@ vendor/lib/unnhal-acc-hta.so
 vendor/lib64/libdisplayconfig.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdpps.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/libhdmiedid.so
+vendor/lib64/libhdmipassthru.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-colormgr-algo.so
 -vendor/lib64/libsdm-disp-vndapis.so
@@ -701,49 +724,6 @@ vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# Firmware (Vendor)
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a225p5_pm4.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a420_pfp.fw
-vendor/firmware/a420_pm4.fw
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-vendor/firmware/a530v1_pfp.fw
-vendor/firmware/a530v1_pm4.fw
-vendor/firmware/a530v2_seq.fw2
-vendor/firmware/a530v3_gpmu.fw2
-vendor/firmware/a530v3_seq.fw2
-vendor/firmware/a540_gpmu.fw2
-vendor/firmware/a612_rgmu.bin
-vendor/firmware/a630_gmu.bin
-vendor/firmware/ipa_uc.b00
-vendor/firmware/ipa_uc.b01
-vendor/firmware/ipa_uc.b02
-vendor/firmware/ipa_uc.elf
-vendor/firmware/ipa_uc.mdt
-vendor/firmware/notif_Ardour.bin
-vendor/firmware/notif_Chic.bin
-vendor/firmware/ring_McLarn.bin
-vendor/firmware/tp/FW_18865_S3706.img
-vendor/firmware/tp/FW_18865_S3706_NEW.img
-vendor/firmware/tp/FW_19801_SY761.bin
-vendor/firmware/tp/FW_19801_SY761_NEW.bin
-vendor/firmware/tp/FW_19861_SY761.bin
-vendor/firmware/tp/FW_19861_SY761_NEW.bin
-vendor/firmware/tp/LIMIT_18857_S3706.img
-vendor/firmware/tp/LIMIT_18865_S3706.img
-vendor/firmware/tp/LIMIT_18865_S3706_NEW.img
-vendor/firmware/tp/LIMIT_19801_SY761.img
-vendor/firmware/tp/LIMIT_19801_SY761_NEW.img
-vendor/firmware/tp/LIMIT_19861_SY761.img
-vendor/firmware/tp/LIMIT_19861_SY761_NEW.img
-
 # FM
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
@@ -788,6 +768,8 @@ vendor/etc/cacert_location.pem
 vendor/etc/xtra_root_cert.pem
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
 vendor/lib/hw/android.hardware.gnss@2.0-impl-qti.so
+vendor/lib/libgarden.so
+vendor/lib/libgeofencing.so
 vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
@@ -861,6 +843,8 @@ vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libhdr_tm.so
+vendor/lib64/libhdrdynamic.so
+vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libOpenCL.so
@@ -870,6 +854,26 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libtinyxml2_1.so
 
 # Graphics firmware 
+vendor/firmware/a225_pfp.fw
+vendor/firmware/a225_pm4.fw
+vendor/firmware/a225p5_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/a330_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/a612_rgmu.bin
+vendor/firmware/a630_gmu.bin
 vendor/firmware/a630_sqe.fw
 vendor/firmware/a640_gmu.bin
 vendor/firmware/a640_zap.b00
@@ -888,6 +892,15 @@ vendor/firmware/leia_pm4_470.fw
 vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
 vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
 vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
+
+# Input
+vendor/lib/libhbtpclient.so
+vendor/lib/libhbtpdsp.so
+vendor/lib/libhbtpfrmwk.so
+vendor/lib64/libgeofencing.so
+vendor/lib64/libhbtpclient.so
+vendor/lib64/libhbtpdsp.so
+vendor/lib64/libhbtpfrmwk.so
 
 # IO Prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -911,6 +924,11 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
+vendor/firmware/ipa_uc.b00
+vendor/firmware/ipa_uc.b01
+vendor/firmware/ipa_uc.b02
+vendor/firmware/ipa_uc.elf
+vendor/firmware/ipa_uc.mdt
 
 # Keystore
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
@@ -949,9 +967,11 @@ vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
+vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib/libjnihelper.so
 vendor/lib64/hw/sound_trigger.primary.msmnile.so
 vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2vop.so
@@ -959,11 +979,17 @@ vendor/lib64/libgcs-calwrapper.so
 vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
 vendor/lib64/libgcs.so
+vendor/lib64/liblistenjni.so
 vendor/lib64/liblistensoundmodel2.so
 vendor/lib64/libmulawdec.so
+vendor/lib64/libjnihelper.so
 
 # Machine learning
+vendor/lib/libnpu.so
+vendor/lib/libopenvx.so
 vendor/lib64/hw/vendor.qti.hardware.mlshal@1.0-impl.so
+vendor/lib64/libnpu.so
+vendor/lib64/libopenvx.so
 vendor/lib64/vendor.qti.hardware.mlshal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.mlshal@1.0.so
 
@@ -1146,6 +1172,7 @@ vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/powerhint.xml
+vendor/lib/libperfconfig.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
@@ -1158,6 +1185,7 @@ vendor/lib64/libgameoptfeature.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters-ns.so
 vendor/lib64/libmeters.so
+vendor/lib64/libperfconfig.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
@@ -1278,6 +1306,7 @@ vendor/lib/lib-rtpsl.so
 vendor/lib/lib-siputility.so
 vendor/lib/lib-uceservice.so
 vendor/lib/libmdmdetect.so
+vendor/lib/libnlnetmgr.so
 vendor/lib/libparam_vendor.so
 vendor/lib/qtibus.so
 vendor/lib/qtimutex.so
@@ -1596,7 +1625,20 @@ vendor/lib64/libtime_genoff.so
 # Touchscreen firmware
 vendor/firmware/tp/FW_18821_SY761.bin
 vendor/firmware/tp/FW_18857_S3706.img
+vendor/firmware/tp/FW_18865_S3706.img
+vendor/firmware/tp/FW_18865_S3706_NEW.img
+vendor/firmware/tp/FW_19801_SY761.bin
+vendor/firmware/tp/FW_19801_SY761_NEW.bin
+vendor/firmware/tp/FW_19861_SY761.bin
+vendor/firmware/tp/FW_19861_SY761_NEW.bin
 vendor/firmware/tp/LIMIT_18821_SY761.img
+vendor/firmware/tp/LIMIT_18857_S3706.img
+vendor/firmware/tp/LIMIT_18865_S3706.img
+vendor/firmware/tp/LIMIT_18865_S3706_NEW.img
+vendor/firmware/tp/LIMIT_19801_SY761.img
+vendor/firmware/tp/LIMIT_19801_SY761_NEW.img
+vendor/firmware/tp/LIMIT_19861_SY761.img
+vendor/firmware/tp/LIMIT_19861_SY761_NEW.img
 
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
@@ -1658,6 +1700,9 @@ vendor/firmware/notif_silent.bin
 vendor/firmware/notif_spirit.bin
 vendor/firmware/notif_surprise.bin
 vendor/firmware/notif_twinkle.bin
+vendor/firmware/notif_Ardour.bin
+vendor/firmware/notif_Chic.bin
+vendor/firmware/ring_McLarn.bin
 vendor/firmware/ring_alacrity.bin
 vendor/firmware/ring_amenity.bin
 vendor/firmware/ring_blues.bin
@@ -1768,8 +1813,10 @@ vendor/lib/libwfduibcsink_proprietary.so
 vendor/lib/libwfduibcsinkinterface_proprietary.so
 vendor/lib/libwfduibcsrc_proprietary.so
 vendor/lib/libwfduibcsrcinterface_proprietary.so
+vendor/lib/libmiracast.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libDxHdcp.so
 vendor/lib64/libwfdhdcpcp.so
+vendor/lib64/libmiracast.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so

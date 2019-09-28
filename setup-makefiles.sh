@@ -43,10 +43,6 @@ write_headers "guacamole guacamoleb guacamoleg"
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
-# Q added blobs
-# TODO: sort and remove this file
-write_makefiles "${MY_DIR}/proprietary-files-q-vendor.txt" true
-
 # Finish
 write_footers
 

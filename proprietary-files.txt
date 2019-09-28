@@ -72,6 +72,8 @@ vendor/etc/media_codecs_dolby_audio.xml
 vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/audio.primary.msmnile.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
@@ -152,6 +154,7 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbthost_if.so
 vendor/lib/libbtnv.so
@@ -472,8 +475,10 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 -product/framework/vendor.qti.hardware.capabilityconfigstore-V1.0-java.jar
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 -vendor/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so
 -vendor/lib/libplatformconfig.so
+vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 -vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
 -vendor/lib64/libplatformconfig.so
 
@@ -509,6 +514,7 @@ vendor/lib/libsdm-colormgr-algo.so
 -vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libsdmcore.so
 vendor/lib/libsdmextension.so
+vendor/lib/unnhal-acc-hta.so
 vendor/lib64/libdisplayconfig.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdpps.so
@@ -785,8 +791,11 @@ vendor/lib/hw/android.hardware.gnss@2.0-impl-qti.so
 vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
+vendor/lib/libizat_client_api.so
+vendor/lib/libizat_core.so
 vendor/lib/libloc_core.so
 vendor/lib/liblocation_api.so
+vendor/lib/libslimclient.so
 vendor/lib64/hw/android.hardware.gnss@2.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/libdataitems.so
@@ -801,6 +810,7 @@ vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_core.so
+vendor/lib64/libloc_socket.so
 vendor/lib64/liblocation_api.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
@@ -1117,6 +1127,7 @@ vendor/etc/libnfc-nxp_zhengzhoubus.conf
 vendor/lib/ese_client.so
 vendor/lib/libp61-jcop-kit.so
 vendor/lib/libpn553_fw.so
+vendor/lib64/hal_libnfc.so
 vendor/lib64/nfc_nci_nxp.so
 vendor/lib64/ese_client.so
 vendor/lib64/ese_spi_nxp.so
@@ -1270,6 +1281,7 @@ vendor/lib/libmdmdetect.so
 vendor/lib/libparam_vendor.so
 vendor/lib/qtibus.so
 vendor/lib/qtimutex.so
+vendor/lib/qcrild_librilutils.so
 vendor/lib/vendor.oneplus.hardware.param@1.0.so
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
@@ -1294,6 +1306,12 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqcrilFramework.so
+vendor/lib64/libqcbor.so
+vendor/lib64/libqcrildatactl.so
+vendor/lib64/libqdma_file_agent.so
+vendor/lib64/libqmi_csvt_srvc.so
+vendor/lib64/libqsap_sdk.so
+vendor/lib64/libqti_vndfwk_detect.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libril-qc-hal-qmi.so

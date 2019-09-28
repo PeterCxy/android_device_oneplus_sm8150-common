@@ -164,7 +164,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbthost_if
+    libbthost_if \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -173,7 +174,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     libxml2 \
     Snap \
-    vendor.oneplus.camera.CameraHIDL@1.0.vendor
+    vendor.oneplus.camera.CameraHIDL@1.0.vendor \
+    vendor.qti.hardware.camera.device@1.0.vendor
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -222,6 +224,10 @@ PRODUCT_PACKAGES += \
     vendor.oem_ftm_svc_disable.rc \
     ueventd.qcom.rc
 
+# Cryptfshw
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0.vendor
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
@@ -236,7 +242,9 @@ PRODUCT_PACKAGES += \
     libvulkan \
     memtrack.msmnile \
     vendor.display.config@1.7 \
-    vendor.qti.hardware.display.allocator@1.0-service
+    vendor.qti.hardware.display.allocator@1.0-service \
+    vendor.qti.hardware.display.allocator@1.0.vendor \
+    vendor.qti.hardware.display.mapper@1.0.vendor
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -422,6 +430,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.oneplus_msmnile \
     android.hardware.sensors@1.0-service.oneplus_msmnile \
     libsensorndkbridge
+
+# Servicetracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf

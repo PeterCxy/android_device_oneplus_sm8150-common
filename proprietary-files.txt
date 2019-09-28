@@ -24,6 +24,7 @@ vendor/lib64/libmdsprpc.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libapps_mem_heap_stub.so
 vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
 vendor/lib/rfsa/adsp/libBeautyShot_skel.so
@@ -497,6 +498,15 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 -vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
 -vendor/lib64/libplatformconfig.so
 
+# Cryptfshw
+vendor/bin/hw/vendor.qti.hardware.cryptfshw@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.cryptfshw@1.0-service-qti.rc
+vendor/lib/libcryptfshwcommon.so
+vendor/lib/libcryptfshwhidl.so
+vendor/lib64/libcryptfshwcommon.so
+vendor/lib64/libcryptfshwhidl.so
+vendor/lib64/vendor.qti.hardware.cryptfshw@1.0.so
+
 # CVP
 vendor/lib/libcvp.so
 vendor/lib/libcvp_common.so
@@ -784,6 +794,7 @@ vendor/lib64/libdataitems.so
 vendor/lib64/libgarden.so
 vendor/lib64/libgarden_haltests_e2e.so
 vendor/lib64/libgdtap.so
+vendor/lib64/libgeofencing.so
 vendor/lib64/libgnss.so
 vendor/lib64/libgnsspps.so
 vendor/lib64/libgps.utils.so
@@ -884,6 +895,14 @@ vendor/firmware/a640_zap.mdt
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
+# HBTP
+vendor/lib/libhbtpclient.so
+vendor/lib/libhbtpdsp.so
+vendor/lib/libhbtpfrmwk.so
+vendor/lib64/libhbtpclient.so
+vendor/lib64/libhbtpdsp.so
+vendor/lib64/libhbtpfrmwk.so
+
 # HotwordEnrollment
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
@@ -892,15 +911,6 @@ vendor/firmware/leia_pm4_470.fw
 vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
 vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
 vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
-
-# Input
-vendor/lib/libhbtpclient.so
-vendor/lib/libhbtpdsp.so
-vendor/lib/libhbtpfrmwk.so
-vendor/lib64/libgeofencing.so
-vendor/lib64/libhbtpclient.so
-vendor/lib64/libhbtpdsp.so
-vendor/lib64/libhbtpfrmwk.so
 
 # IO Prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -1797,7 +1807,9 @@ vendor/bin/wifidisplayhalservice
 vendor/etc/ArmHDCP_QTI_Android.cfg
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/lib/libDxHdcp.so
+vendor/lib/libwfdaac_vendor.so
 vendor/lib/libwfdcodecv4l2_proprietary.so
+vendor/lib/libwfdconfigutils_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice_proprietary.so

@@ -112,7 +112,6 @@ vendor/lib/libbatching.so
 vendor/lib/libbatterylistener.so
 vendor/lib/libcacertclient.so
 vendor/lib/libcert_parse.wpa_s.so
-vendor/lib/libchrome.so
 vendor/lib/libcirrusspkrprot.so
 vendor/lib/libcld80211.so
 vendor/lib/libcomprcapture.so
@@ -197,7 +196,6 @@ vendor/lib64/libbatching.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libcert_parse.wpa_s.so
-vendor/lib64/libchrome.so
 vendor/lib64/libcirrusspkrprot.so
 vendor/lib64/libcomprcapture.so
 vendor/lib64/libcontrol_daemon.so

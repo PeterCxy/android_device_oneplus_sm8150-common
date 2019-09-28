@@ -122,7 +122,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix
+    tinymix \
+    libtinycompress \
+    libtinycompress.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -342,6 +344,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_omx.vendor \
     android.hardware.media.omx@1.0-service
+
+# Misc
+PRODUCT_PACKAGES += \
+    libchrome \
+    libchrome.vendor
 
 # Net
 PRODUCT_PACKAGES += \

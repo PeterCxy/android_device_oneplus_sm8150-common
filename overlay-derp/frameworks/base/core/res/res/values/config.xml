@@ -17,8 +17,7 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-   
- <!-- The list absolute paths of jar/apk files containing the device specific handlers,
+    <!-- The list absolute paths of jar/apk files containing the device specific handlers,
         delimited by File.pathSeparator, which defaults to ":" on Android  -->
     <string name="config_deviceKeyHandlerLib" translatable="false">/system/product/priv-app/DeviceParts/DeviceParts.apk</string>
 
@@ -26,8 +25,10 @@
         com.android.internal.os.DeviceKeyHandler interface. -->
     <string name="config_deviceKeyHandlerClass" translatable="false">org.omnirom.device.KeyHandler</string>
 
+    <!-- Hardware keys present on the device, stored as a bit field. -->
+    <bool name="config_proxiSensorWakupCheck">true</bool>
 
-    <!-- Hardware keys present on the device, stored as a bit field.
+    <!-- All the capabilities of the LEDs on this device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
              1 - Home

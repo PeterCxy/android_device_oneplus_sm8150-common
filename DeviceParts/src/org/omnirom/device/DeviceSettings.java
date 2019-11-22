@@ -30,6 +30,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -57,6 +58,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_PROXI_SWITCH = "proxi";
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
+    public static final String KEY_FPS_INFO = "fps_info";
 
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
@@ -70,11 +72,14 @@ public class DeviceSettings extends PreferenceFragment implements
     private static TwoStatePreference mHWKSwitch;
     private PreferenceCategory buttonCategory;
     private static Context mContext;
+    private static SwitchPreference mFpsInfo;
 
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main, rootKey);
+        mContext = this.getContext();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
@@ -101,6 +106,10 @@ public class DeviceSettings extends PreferenceFragment implements
         valueIndex = mSliderModeBottom.findIndexOfValue(String.valueOf(sliderModeBottom));
         mSliderModeBottom.setValueIndex(valueIndex);
         mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
+
+        mFpsInfo = (SwitchPreference) findPreference(KEY_FPS_INFO);
+        mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
+        mFpsInfo.setOnPreferenceChangeListener(this);
 
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
@@ -143,6 +152,14 @@ public class DeviceSettings extends PreferenceFragment implements
             setSliderAction(2, sliderMode);
             int valueIndex = mSliderModeBottom.findIndexOfValue(value);
             mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
+        } else if (preference == mFpsInfo) {
+            boolean enabled = (Boolean) newValue;
+            Intent fpsinfo = new Intent(this.getContext(), org.omnirom.device.FPSInfoService.class);
+            if (enabled) {
+                this.getContext().startService(fpsinfo);
+            } else {
+                this.getContext().stopService(fpsinfo);
+            }
         }
         return true;
     }

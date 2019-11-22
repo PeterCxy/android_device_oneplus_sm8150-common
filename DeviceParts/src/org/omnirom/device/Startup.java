@@ -51,7 +51,7 @@ public class Startup extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
-
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         // double swipe -> music play
         String mapping = GestureSettings.DEVICE_GESTURE_MAPPING_0;
         String value = Settings.System.getString(context.getContentResolver(), mapping);
@@ -61,6 +61,11 @@ public class Startup extends BroadcastReceiver {
         }
         boolean enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_DOUBLE_SWIPE_APP), enabled);
+
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
+        if (enabled) {
+            context.startService(new Intent(context, FPSInfoService.class));
+        }
 
         // circle -> camera
         mapping = GestureSettings.DEVICE_GESTURE_MAPPING_1;
@@ -152,7 +157,7 @@ public class Startup extends BroadcastReceiver {
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.FP_GESTURE_LONG_PRESS_APP), enabled);
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
         restore(SRGBModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);

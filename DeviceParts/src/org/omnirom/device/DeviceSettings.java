@@ -58,6 +58,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_PROXI_SWITCH = "proxi";
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
+    public static final String KEY_ADAPTIVE_SWITCH = "adaptive";
+    public static final String KEY_ONEPLUS_SWITCH = "oneplus";
     public static final String KEY_FPS_INFO = "fps_info";
 
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";

@@ -50,6 +50,8 @@
     <string name="dci_mode_title">Wide color gamut mode</string>
     <string name="Night_mode_summary"></string>
     <string name="Night_mode_title">Night mode</string>
+    <string name="adaptive_mode_title">Adaptive mode</string>
+    <string name="oneplus_mode_title">OnePlus mode</string>
 
     <string name="choose_app">Choose app</string>
     <string name="category_double_swipe_gesture">II gesture</string>

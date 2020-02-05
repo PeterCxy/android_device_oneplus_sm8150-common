@@ -112,6 +112,6 @@
     <string name="toast_silent">Silent</string>
     <string name="toast_flash">Flashlight</string>
 
-    <string name="fps_info_title">FPS overlay</string>
+    <string name="fps_info_title">FPS Overlay</string>
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
 </resources>

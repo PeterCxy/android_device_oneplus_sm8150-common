@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),dumpling cheeseburger))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),guacamoleb))
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
@@ -22,6 +22,9 @@ package_resource_overlays := $(strip \
       $(addprefix $(dir)/, packages/apps/DeviceParts/res))))
 
 LOCAL_RESOURCE_DIR := $(package_resource_overlays) $(LOCAL_RESOURCE_DIR)
+
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    vendor.oneplus.camera.CameraHIDL-V1.0-java
 
 LOCAL_JAVA_LIBRARIES := telephony-common
 

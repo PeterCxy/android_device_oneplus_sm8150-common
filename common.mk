@@ -471,8 +471,8 @@ PRODUCT_PACKAGES += \
 
 # tri-state key
 PRODUCT_PACKAGES += \
-    tri-state-key_daemon 
-
+    tri-state-key_daemon \
+    tri-state-key-calibrate_daemon
 
 # Trust HAL
 PRODUCT_PACKAGES += \

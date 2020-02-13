@@ -64,7 +64,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
-    private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+    private static final boolean sIsguacamoleb = android.os.Build.DEVICE.equals("guacamoleb");
 
     private VibratorStrengthPreference mVibratorStrength;
     private ListPreference mSliderModeTop;
@@ -120,7 +120,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mHWKSwitch = (TwoStatePreference) findPreference(KEY_HWK_SWITCH);
         buttonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY);
-        if (!sIsOnePlus5t) {
+        if (!sIsguacamoleb) {
             mHWKSwitch.setEnabled(HWKSwitch.isSupported());
             mHWKSwitch.setOnPreferenceChangeListener(new HWKSwitch());
         } else {

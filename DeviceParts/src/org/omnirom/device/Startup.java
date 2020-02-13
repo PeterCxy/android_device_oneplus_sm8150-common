@@ -27,7 +27,7 @@ import android.text.TextUtils;
 
 public class Startup extends BroadcastReceiver {
 
-    private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+    private static final boolean sIsguacamoleb = android.os.Build.DEVICE.equals("guacamoleb");
 
     private void restore(String file, boolean enabled) {
         if (file == null) {

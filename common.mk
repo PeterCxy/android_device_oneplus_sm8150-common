@@ -253,7 +253,11 @@ PRODUCT_PACKAGES += \
 
 # Device
 PRODUCT_PACKAGES += \
-    DeviceParts 
+    DeviceParts \
+	ExactCalculator \
+	DeskClock \
+	SoundRecorder \
+	Dialer
 
 # DRM
 PRODUCT_PACKAGES += \

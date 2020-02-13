@@ -5,6 +5,7 @@
 #
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
@@ -252,7 +253,7 @@ PRODUCT_PACKAGES += \
 
 # Device
 PRODUCT_PACKAGES += \
-    DeviceParts
+    DeviceParts 
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -466,7 +467,8 @@ PRODUCT_PACKAGES += \
 
 # tri-state key
 PRODUCT_PACKAGES += \
-    tri-state-key_daemon
+    tri-state-key_daemon 
+
 
 # Trust HAL
 PRODUCT_PACKAGES += \

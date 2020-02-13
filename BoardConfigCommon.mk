@@ -183,6 +183,12 @@ TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD := true
 # Security patch level
 VENDOR_SECURITY_PATCH := 2019-09-05
 
+# We modify several neverallows, so let the build proceed
+ifneq ($(TARGET_BUILD_VARIANT),userdebug)
+SELINUX_IGNORE_NEVERALLOWS := true
+endif
+
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 

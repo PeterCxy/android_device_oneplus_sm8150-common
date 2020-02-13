@@ -1,0 +1,9 @@
+type hal_omni_vibrator, coredomain, domain;
+hal_server_domain(hal_omni_vibrator, hal_vibrator)
+type hal_omni_vibrator_exec, exec_type, file_type;
+init_daemon_domain(hal_omni_vibrator)
+allow hal_omni_vibrator hal_vibrator_hwservice:hwservice_manager find;
+allow hal_omni_vibrator sysfs_vibrator:file rw_file_perms;
+allow hal_omni_vibrator sysfs_vibrator:lnk_file rw_file_perms;
+allow hal_omni_vibrator sysfs:lnk_file rw_file_perms;
+allow hal_omni_vibrator sysfs_oem:file rw_file_perms;

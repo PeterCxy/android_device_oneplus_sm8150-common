@@ -1,0 +1,27 @@
+type hal_fod_msmnile, coredomain, domain;
+hal_server_domain(hal_fod_msmnile, hal_lineage_fod)
+
+type hal_fod_msmnile_exec, exec_type, file_type;
+init_daemon_domain(hal_fod_msmnile)
+
+# Allow access to the HALs
+hal_client_domain(hal_fod_msmnile, hal_fingerprint)
+
+# Allow binder communication with hal_display_default
+binder_call(hal_fod_msmnile, hal_display_default)
+
+# Allow binder communication with hal_fingerprint
+binder_call(hal_fod_msmnile, hal_fingerprint)
+
+# Allow hal_fod_msmnile to hal_display_hwservice
+allow hal_fod_msmnile hal_display_hwservice:hwservice_manager find;
+
+# Allow hal_fod_msmnile to hal_fingerprint_hwservice
+allow hal_fod_msmnile hal_fingerprint_hwservice:hwservice_manager find;
+
+# Allow hal_fod_msmnile to read and write to sysfs_fod
+allow hal_fod_msmnile sysfs_fod:file rw_file_perms;
+allow hal_fod_msmnile sysfs_oem:file rw_file_perms;
+allow hal_fod_msmnile sysfs_graphics:file rw_file_perms;
+allow hal_fod_msmnile omni_sysfs_drm:file rw_file_perms;
+

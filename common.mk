@@ -6,9 +6,11 @@
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/addons/onepluscamera/config.mk)
+$(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
+
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_props.mk
@@ -269,7 +271,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.oneplus_msmnile \
     vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile \
-    vendor.oneplus.fingerprint.extension@1.0.vendor
+    vendor.oneplus.fingerprint.extension@1.0.vendor \
+	vendor.oneplus.hardware.display@1.0.vendor
+										  
 
 # For config.fs
 PRODUCT_PACKAGES += \

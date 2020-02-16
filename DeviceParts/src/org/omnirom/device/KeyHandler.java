@@ -64,6 +64,7 @@ import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
 
+
 import android.view.Gravity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -121,7 +122,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final boolean sIsguacamoleb = android.os.Build.DEVICE.equals("guacamoleb");
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "data/misc/lineage/client_package_name";
+    public static final String CLIENT_PACKAGE_PATH = "/data/misc/lineage/client_package_name";
     public static final String PACKAGE_SYSTEMUI = "com.android.systemui";
 
     private static final int[] sSupportedGestures5t = new int[]{
@@ -331,6 +332,11 @@ public class KeyHandler implements DeviceKeyHandler {
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
+        isOPCameraAvail = PackageUtils.isAvailableApp("com.oneplus.camera", context);
+        if ((mClientObserver == null) && (isOPCameraAvail)) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
         mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
         mResContext = getPackageContext(mContext, "org.omnirom.device");
     }
@@ -486,10 +492,7 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mUseTiltCheck) {
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
         }
-        if ((mClientObserver == null) && (isOPCameraAvail)) {
-            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
-            mClientObserver.startWatching();
-        }
+
     }
 
     private void enableGoodix() {

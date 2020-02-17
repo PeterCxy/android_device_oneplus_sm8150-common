@@ -18,6 +18,6 @@
 <resources>
     <!-- DerpFest maintainer -->
 	<string name="maintainer_name">Abuzar Shaheen(Ab.Shaheen)</string>
-	<!--string name="maintainer_telegram">https://t.me/AbuzarShaheen</string-->
+	<string name="maintainer_telegram">https://t.me/AbuzarShaheen</string>
 
 </resources>
